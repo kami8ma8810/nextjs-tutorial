@@ -35,7 +35,7 @@ export default function Layout({ children, home }: { children: React.ReactNode; 
               width={144}
               alt=''
             />
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
+            <h1 className={`${utilStyles.heading2Xl} ${utilStyles.noise}`}>{name}</h1>
           </>
         ) : (
           // 下層ページ
