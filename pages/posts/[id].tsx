@@ -1,11 +1,19 @@
+import Layout from '../../components/layout';
+import { getAllPostIds, getPostData } from '../../lib/posts';
 import Head from 'next/head';
 import Date from '../../components/date';
-import Layout from '../../components/layout';
-import { getAllPostIds, getPostData } from '../../lib/post';
-
 import utilStyles from '../../styles/utils.module.css';
+import { GetStaticProps, GetStaticPaths } from 'next';
 
-export default function Post({ postData }) {
+export default function Post({
+  postData,
+}: {
+  postData: {
+    title: string;
+    date: string;
+    contentHtml: string;
+  };
+}) {
   return (
     <Layout>
       <Head>
@@ -22,22 +30,22 @@ export default function Post({ postData }) {
     </Layout>
   );
 }
-export async function getStaticPaths() {
+
+export const getStaticPaths: GetStaticPaths = async () => {
   // idの値の配列を返す
   const paths = getAllPostIds();
-
   return {
     paths,
-    fallback: false,
+    fallback: false, //falseオプションは必須
   };
-}
+};
 
-export async function getStaticProps({ params }) {
+export const getStaticProps: GetStaticProps = async ({ params }) => {
   //  記事に必要なデータをフェッチする
-  const postData = await getPostData(params.id);
+  const postData = await getPostData(params?.id as string);
   return {
     props: {
       postData,
     },
   };
-}
+};
