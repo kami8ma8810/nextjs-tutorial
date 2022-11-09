@@ -24,7 +24,7 @@ export default function Home({
         <p>都内の制作会社に勤めるフロントエンドエンジニアです。Astro, React, Next.js, TypeScriptを勉強中です。</p>
         <p>趣味でBlenderをやっています。</p>
       </section>
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+      <section className={`${utilStyles.headingMd}`}>
         <h2 className={utilStyles.headingLg}>ブログ</h2>
         <ul className={utilStyles.list}>
           {allPostsData.map(({ id, date, title }) => (

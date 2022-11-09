@@ -64,6 +64,14 @@ export default function Layout({ children, home }: { children: React.ReactNode; 
           <Link href='/'>← 戻る</Link>
         </div>
       )}
+      <p className={utilStyles.marginTop2em}>
+        参考：
+        <cite>
+          <a href='https://github.com/vercel/next-learn/tree/master/basics/typescript-final'>
+            https://github.com/vercel/next-learn/tree/master/basics/typescript-final
+          </a>
+        </cite>
+      </p>
     </div>
   );
 }
