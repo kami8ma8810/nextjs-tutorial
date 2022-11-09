@@ -6,6 +6,7 @@ body {
     Helvetica Neue, sans-serif;
   line-height: 1.6;
   font-size: 18px;
+  background-color: #e7e7e7;
 }
 
 * {
@@ -13,7 +14,7 @@ body {
 }
 
 a {
-  color: #0070f3;
+  color: #0c6cba;
   text-decoration: none;
 }
 
